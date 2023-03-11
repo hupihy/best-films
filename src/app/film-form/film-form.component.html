@@ -1,0 +1,39 @@
+<div class="films-container">
+  <div class="films" *ngFor="let film of this.filmFormService.allFilms">
+    <div class="film-card">
+      <div class="film-poster">
+        <img src="assets/images/{{film.id}}.jpeg" alt="{{film.name}}">
+      </div>
+      <h4 class="film-name">{{film.name}}</h4>
+      <span class="film-genres">
+      <h5 class="film-genre">{{filmFormService.swapGenres(film.genre)}}</h5>
+      </span>
+      <h6 class="film-year">{{film.year}}</h6>
+      <button class="favorites-film-button"
+              (click)="filmFormService.choseFavoritesFilm(film)"
+      >
+        <mat-icon class="favorites-film"
+                  fontIcon="favorite_border"
+                  *ngIf="filmFormService.bestFilm.id != film.id; else favorites"></mat-icon>
+      </button>
+      <ng-template #favorites>
+        <mat-icon class="favorites-film" fontIcon="favorite"></mat-icon>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<h2>Самый лучший фильм</h2>
+
+<div class="best-film" *ngIf="filmFormService.bestFilm.isChose">
+  <div class="film-card">
+    <div class="film-poster">
+      <img src="assets/images/{{filmFormService.bestFilm.id}}.jpeg" alt="{{filmFormService.bestFilm.name}}">
+    </div>
+    <h4 class="film-name">{{filmFormService.bestFilm.name}}</h4>
+    <span class="film-genres">
+      <h5 class="film-genre">{{filmFormService.swapGenres(filmFormService.bestFilm.genre)}},</h5>
+    </span>
+    <h6 class="film-year">{{filmFormService.bestFilm.year}}</h6>
+  </div>
+</div>

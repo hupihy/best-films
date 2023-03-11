@@ -1,0 +1,104 @@
+.films-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.film-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 15px 20px;
+  gap: 10px;
+  width: 190px;
+  height: 400px;
+  background: #FFFFFF;
+  box-shadow: 0 0 15px rgba(29, 24, 56, 0.1);
+  border-radius: 10px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 10px;
+}
+
+.film-poster {
+  width: 150px;
+  height: 225px;
+  left: 0;
+  top: 0;
+}
+
+.film-name {
+  margin: 5px 0;
+  width: 150px;
+  height: 16px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #1D1838;
+}
+
+.film-genres {
+  margin-bottom: 10px;
+  width: 150px;
+  height: 28px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  flex-wrap:wrap ;
+  align-items: center;
+  color: #1D1838;
+}
+.film-genre{
+  margin: 0;
+  padding: 0;
+}
+
+.film-year {
+  margin: 0 0 5px 0;
+  width: 26px;
+  height: 14px;
+  font-family: 'Montserrat', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  color: #1D1838;
+}
+
+.favorites-film-button {
+  width: 48px;
+  height: 48px;
+  align-self: flex-end;
+  border: none;
+  outline: none;
+  background: #FFFFFF;
+  opacity: 0;
+  transition: .3s;
+}
+
+.favorites-film {
+  margin-top: 5px;
+}
+
+.favorites-film-button:hover {
+  border-radius: 40px;
+  background: #e6e6e6;
+}
+
+.film-card:hover {
+  .favorites-film-button {
+    opacity: 1;
+    transition: .3s;
+  }
+}
