@@ -1,0 +1,72 @@
+.dialog-container {
+  width: 850px;
+  height: 260px;
+  background: #f4f4f4;
+  display: flex;
+}
+
+.film-poster {
+  width: 150px;
+  height: 215px;
+  margin: 15px 20px;
+}
+
+.film-review {
+  margin: 15px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.film-genres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.film-genre {
+  margin: 0 3px 5px 0;
+}
+.film-description{
+  overflow: auto;
+}
+.window-buttons{
+  align-self: end;
+}
+.chose-best-film-button{
+  color: #3F51B5;
+  background: #fff;
+  border-radius: 20px;
+  border: none;
+  transition: .3s;
+  height: 30px;
+}
+.chose-best-film-button:hover{
+  background: rgba(63, 81, 181, 0.1);
+  transition: .3s;
+}
+.delete-favorites-film-button{
+  color: #FF4081;
+  background: #fff;
+  border-radius: 20px;
+  border: none;
+  transition: .3s;
+  height: 30px;
+}
+.delete-favorites-film-button:hover{
+  background: rgba(255, 64, 129, 0.1);
+  transition: .3s;
+}
+.close-window-dialog-button{
+  color: #FF4081;
+  background: #f4f4f4;
+  border: none;
+  border-radius: 20px;
+  transition: .3s;
+  height: 30px;
+  width: 60px;
+}
+.close-window-dialog-button:hover{
+  background: rgba(255, 64, 129, 0.1);
+  transition: .3s;
+}
+
+

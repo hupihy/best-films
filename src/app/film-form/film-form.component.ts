@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FilmFormService} from "./film-form.service";
 import {HttpClient} from "@angular/common/http";
-
+import {DialogWindowService} from "../dialog-window/dialog-window.service";
 
 @Component({
   selector: 'app-film-form',
@@ -9,7 +9,10 @@ import {HttpClient} from "@angular/common/http";
   styleUrls: ['./film-form.component.scss']
 })
 export class FilmFormComponent implements OnInit {
-  constructor(public filmFormService: FilmFormService, private http: HttpClient){
+  film:object
+  constructor(public filmFormService: FilmFormService,
+              public  dialogWindowService:DialogWindowService,
+              private http: HttpClient,){
     this.http.get("./assets/data.json")
       .subscribe((filmsData) => {
         this.filmFormService.allFilms = filmsData
@@ -22,5 +25,6 @@ export class FilmFormComponent implements OnInit {
       this.filmFormService.bestFilm.isChose = true
     }
   }
+
 }
 

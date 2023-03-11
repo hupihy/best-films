@@ -34,7 +34,7 @@ export class FilmFormService {
     genre: [],
   };
 
-  choseFavoritesFilm(film: BestFilm):void{
+  choseFavoritesFilm(film):void{
     if (this.bestFilm.id != film.id) {
       localStorage.setItem('bestFilm', JSON.stringify(film));
       this.bestFilm = JSON.parse((localStorage.getItem('bestFilm')));
@@ -46,12 +46,9 @@ export class FilmFormService {
 
     }
   }
-  swapGenres(genres:number[]):string{
-     const newGenres:string[]=[]
-    genres.forEach(genresId =>{
-      newGenres.push(Genres[genresId])
-    })
-    return newGenres.join()
+
+  swapGenres(genresId:number):string{
+    return Genres[genresId]
   }
 }
 

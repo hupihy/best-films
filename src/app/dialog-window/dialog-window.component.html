@@ -1,0 +1,30 @@
+<div class="dialog-container">
+  <div class="film-poster">
+    <img src="assets/images/{{dialogWindowService.dialogFilm.id}}.jpeg" alt="{{dialogWindowService.dialogFilm.name}}">
+  </div>
+  <div class="film-review">
+    <h3 class="film-name">{{dialogWindowService.dialogFilm.name}}</h3>
+    <span class="film-genres">
+      <p class="film-genre"
+         *ngFor=" let generId of dialogWindowService.dialogFilm.genre">{{filmFormService.swapGenres(generId) + ''}}</p>
+    </span>
+    <h5 class="film-year">{{dialogWindowService.dialogFilm.year}}</h5>
+    <p class="film-description">{{dialogWindowService.dialogFilm.description}}</p>
+    <div class="window-buttons">
+      <button *ngIf="filmFormService.bestFilm.id != dialogWindowService.dialogFilm.id; else favorites"
+              (click)="filmFormService.choseFavoritesFilm(dialogWindowService.dialogFilm)"
+              class="chose-best-film-button"
+      >Выбрать лучшим фильмом
+      </button>
+      <button class="close-window-dialog-button"
+              (click)="dialogWindowService.onCloseDialog()"
+      >закрыть
+      </button>
+    </div>
+  </div>
+</div>
+<ng-template #favorites>
+  <button class="delete-favorites-film-button"
+          (click)="filmFormService.choseFavoritesFilm(dialogWindowService.dialogFilm)">Удалить из лучших фильмов
+  </button>
+</ng-template>

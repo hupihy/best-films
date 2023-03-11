@@ -1,14 +1,19 @@
 <div class="films-container">
-  <div class="films" *ngFor="let film of this.filmFormService.allFilms">
+  <div class="films"
+       *ngFor="let film of this.filmFormService.allFilms">
     <div class="film-card">
-      <div class="film-poster">
-        <img src="assets/images/{{film.id}}.jpeg" alt="{{film.name}}">
-      </div>
-      <h4 class="film-name">{{film.name}}</h4>
-      <span class="film-genres">
-      <h5 class="film-genre">{{filmFormService.swapGenres(film.genre)}}</h5>
-      </span>
-      <h6 class="film-year">{{film.year}}</h6>
+      <button (click)="dialogWindowService.onOpenDialog(film)" class="dialog-button">
+        <div class="film-poster">
+          <img src="assets/images/{{film.id}}.jpeg" alt="{{film.name}}">
+        </div>
+        <h4 class="film-name">{{film.name}}</h4>
+        <div >
+          <div class="film-genres">
+            <h5 class="film-genre"*ngFor="let genreId of film.genre">{{filmFormService.swapGenres(genreId)}}</h5>
+          </div>
+        </div>
+          <h6 class="film-year">{{film.year}}</h6>
+      </button>
       <button class="favorites-film-button"
               (click)="filmFormService.choseFavoritesFilm(film)"
       >
@@ -31,8 +36,8 @@
       <img src="assets/images/{{filmFormService.bestFilm.id}}.jpeg" alt="{{filmFormService.bestFilm.name}}">
     </div>
     <h4 class="film-name">{{filmFormService.bestFilm.name}}</h4>
-    <span class="film-genres">
-      <h5 class="film-genre">{{filmFormService.swapGenres(filmFormService.bestFilm.genre)}},</h5>
+    <span class="film-genres" *ngFor="let genreId of filmFormService.bestFilm.genre">
+      <span class="film-genre">{{filmFormService.swapGenres(genreId)}},</span>
     </span>
     <h6 class="film-year">{{filmFormService.bestFilm.year}}</h6>
   </div>
