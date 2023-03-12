@@ -11,6 +11,9 @@ import {MatIconModule} from "@angular/material/icon";
 
 import {MatDialogModule} from "@angular/material/dialog";
 import { DialogWindowComponent } from './dialog-window/dialog-window.component';
+import { FiltersComponent } from './filters/filters.component';
+import {MatInputModule} from "@angular/material/input";
+
 
 
 @NgModule({
@@ -18,14 +21,18 @@ import { DialogWindowComponent } from './dialog-window/dialog-window.component';
     AppComponent,
     FilmFormComponent,
     DialogWindowComponent,
+    FiltersComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSelectModule,
     MatIconModule,
+    MatSelectModule,
     MatDialogModule,
     HttpClientModule,
+    MatInputModule,
 
   ],
   providers: [],

@@ -1,13 +1,6 @@
 import {Injectable} from "@angular/core";
+import {BestFilm} from "src/app/interfaces/interfaces"
 
-interface BestFilm {
-  isChose: boolean,
-  id: number,
-  name: string,
-  year: string,
-  description: string,
-  genre: number[],
-}
 enum Genres {
   'драма' = 1,
   'биография' = 2,
@@ -48,7 +41,7 @@ export class FilmFormService {
   }
 
   swapGenres(genresId:number):string{
-    return Genres[genresId]
+    return Genres[genresId];
   }
 }
 

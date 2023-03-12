@@ -1,6 +1,6 @@
 <div class="films-container">
   <div class="films"
-       *ngFor="let film of this.filmFormService.allFilms">
+       *ngFor="let film of this.filtersService.filterFilms">
     <div class="film-card">
       <button (click)="dialogWindowService.onOpenDialog(film)" class="dialog-button">
         <div class="film-poster">
@@ -36,8 +36,8 @@
       <img src="assets/images/{{filmFormService.bestFilm.id}}.jpeg" alt="{{filmFormService.bestFilm.name}}">
     </div>
     <h4 class="film-name">{{filmFormService.bestFilm.name}}</h4>
-    <span class="film-genres" *ngFor="let genreId of filmFormService.bestFilm.genre">
-      <span class="film-genre">{{filmFormService.swapGenres(genreId)}},</span>
+    <span class="film-genres">
+      <span class="film-genre" *ngFor="let genreId of filmFormService.bestFilm.genre">{{filmFormService.swapGenres(genreId)}},</span>
     </span>
     <h6 class="film-year">{{filmFormService.bestFilm.year}}</h6>
   </div>

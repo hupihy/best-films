@@ -1,0 +1,16 @@
+<div class="filters-container">
+  <mat-form-field appearance="fill" class="genres-filter">
+    <mat-label>Жанры</mat-label>
+    <mat-select (selectionChange)="this.filtersService.selectedGenre($event.value)">
+      <mat-option *ngFor="let genre of this.filtersService.genres"
+                  [value]="genre"
+      >{{genre}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text"
+           id="search-film"
+           placeholder="Введите название">
+  </mat-form-field>
+</div>
